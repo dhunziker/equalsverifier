@@ -125,7 +125,7 @@ class AnnotationAccessor {
 		Visitor v = new Visitor(inheriting);
 		try {
 			ClassReader cr = new ClassReader(is);
-			cr.accept(v, false);
+			cr.accept(v, 0);
 		}
 		catch (IOException e) {
 			if (ignoreFailure) {
@@ -150,7 +150,7 @@ class AnnotationAccessor {
 		private final boolean inheriting;
 
 		public Visitor(boolean inheriting) {
-			super(false);
+			super(0);
 			this.inheriting = inheriting;
 		}
 		

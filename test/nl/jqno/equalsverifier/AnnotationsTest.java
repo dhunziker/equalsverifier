@@ -18,7 +18,7 @@ package nl.jqno.equalsverifier;
 import static nl.jqno.equalsverifier.testhelpers.Util.assertFailure;
 import static nl.jqno.equalsverifier.testhelpers.Util.nullSafeEquals;
 import static nl.jqno.equalsverifier.testhelpers.Util.nullSafeHashCode;
-import static org.junit.matchers.JUnitMatchers.containsString;
+import static org.hamcrest.CoreMatchers.containsString;
 import nl.jqno.equalsverifier.testhelpers.Util;
 import nl.jqno.equalsverifier.testhelpers.annotations.Immutable;
 import nl.jqno.equalsverifier.testhelpers.annotations.NonNull;
@@ -86,6 +86,7 @@ public class AnnotationsTest {
 	
 	@Test
 	public void entityNonJpaAnnotation() {
+		thrown.handleAssertionErrors();
 		thrown.expect(AssertionError.class);
 		thrown.expectMessage(containsString("Mutability"));
 		

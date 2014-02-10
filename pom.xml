@@ -51,7 +51,7 @@
 		<dependency>
 			<groupId>asm</groupId>
 			<artifactId>asm</artifactId>
-			<version>20041228.180559</version>
+			<version>3.3.1</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
