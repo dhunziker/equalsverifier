@@ -3,3 +3,4 @@ dist
 lib
 bin
 .DS_Store
+/target

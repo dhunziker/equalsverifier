@@ -22,12 +22,12 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import net.sf.cglib.asm.AnnotationVisitor;
-import net.sf.cglib.asm.Attribute;
-import net.sf.cglib.asm.ClassReader;
-import net.sf.cglib.asm.ClassWriter;
-import net.sf.cglib.asm.FieldVisitor;
-import net.sf.cglib.asm.Type;
+import org.objectweb.asm.AnnotationVisitor;
+import org.objectweb.asm.Attribute;
+import org.objectweb.asm.ClassReader;
+import org.objectweb.asm.ClassWriter;
+import org.objectweb.asm.FieldVisitor;
+import org.objectweb.asm.Type;
 import nl.jqno.equalsverifier.util.exceptions.ReflectionException;
 
 /**
@@ -125,7 +125,7 @@ class AnnotationAccessor {
 		Visitor v = new Visitor(inheriting);
 		try {
 			ClassReader cr = new ClassReader(is);
-			cr.accept(v, 0);
+			cr.accept(v, false);
 		}
 		catch (IOException e) {
 			if (ignoreFailure) {
@@ -150,7 +150,7 @@ class AnnotationAccessor {
 		private final boolean inheriting;
 
 		public Visitor(boolean inheriting) {
-			super(0);
+			super(false);
 			this.inheriting = inheriting;
 		}
 		
